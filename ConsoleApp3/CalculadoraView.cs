@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
@@ -15,6 +12,7 @@ namespace ConsoleApp3
             Boolean flag = true;
             while (flag)
             {
+                Console.Clear();
                 Console.WriteLine("DIGITE A OPERAÇÃO QUE DESEJA FAZER:");
                 Console.WriteLine("SOMA                            [1]");
                 Console.WriteLine("SUBTRACAO                       [2]");
@@ -58,25 +56,58 @@ namespace ConsoleApp3
             Console.Clear();
             Console.WriteLine("BEM VINDO AO MENU DE SOMA!");
             Console.WriteLine("Quanto números irá somar?");
-            int qntSoma = int.Parse(Console.ReadLine());
+            int qntNums = int.Parse(Console.ReadLine());
             List<double> nums = new List<double>();
-            for (int i = 1; i <= qntSoma; i++)
+            for (int i = 1; i <= qntNums; i++)
             {
                 Console.WriteLine($"Digite o {i}º número a ser somado:");
                 nums.Add(double.Parse(Console.ReadLine()));
                 Console.WriteLine();
             }
-            Calculadora.Soma(nums);
+            double total = Calculadora.Soma(nums);
+            Console.WriteLine(total);
+            Console.WriteLine("Pressione enter para continuar...");
+            Console.ReadLine();
         }
 
         public void MenuSubtracao()
         {
-
+            Console.Clear();
+            Console.WriteLine("BEM VINDO AO MENU DE SUBTRAÇÃO!");
+            Console.WriteLine("Qual será o seu minuendo (número total a ser subtraído)?");
+            int minuendo = int.Parse(Console.ReadLine());
+            Console.WriteLine("Quantos subtraendos (número retirado do minuendo)?");
+            int qntNums = int.Parse(Console.ReadLine());
+            List<double> nums = new List<double>();
+            for (int i = 1; i <= qntNums; i++)
+            {
+                Console.WriteLine($"Digite o {i}º número usado para subtrair:");
+                nums.Add(double.Parse(Console.ReadLine()));
+                Console.WriteLine();
+            }
+            double total = Calculadora.Subtracao(minuendo, nums);
+            Console.WriteLine(total);
+            Console.WriteLine("Pressione enter para continuar...");
+            Console.ReadLine();
         }
 
         public void MenuMultiplicacao()
         {
-
+            Console.Clear();
+            Console.WriteLine("BEM VINDO AO MENU DE MULTIPLICAÇÃO!");
+            Console.WriteLine("Quantos multiplicadores você quer?");
+            int qntNums = int.Parse(Console.ReadLine());
+            List<double> nums = new List<double>();
+            for (int i = 1; i <= qntNums; i++)
+            {
+                Console.WriteLine($"Digite o {i}º número usado para multiplicar:");
+                nums.Add(double.Parse(Console.ReadLine()));
+                Console.WriteLine();
+            }
+            double total = Calculadora.Multiplicacao(nums);
+            Console.WriteLine(total);
+            Console.WriteLine("Pressione enter para continuar...");
+            Console.ReadLine();
         }
 
         public void MenuDivisao()

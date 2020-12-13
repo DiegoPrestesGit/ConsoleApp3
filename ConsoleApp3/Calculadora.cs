@@ -7,39 +7,39 @@ namespace ConsoleApp3
     {
         public double Soma(List<double> nums)
         {
-            Console.Clear();
             double total = 0;
             foreach (double num in nums)
             {
                 total += num;
+                Console.WriteLine($"Valores durante execução: {total}");
             }
-            Console.WriteLine(total);
-            Console.ReadLine();
+
             return total;
         }
 
-        public double Subtracao(double total, double[] nums)
+        public double Subtracao(double total, List<double> nums)
         {
             foreach (double num in nums)
             {
                 total -= num;
+                Console.WriteLine($"Valores durante execução: {total}");
             }
             return total;
         }
 
-        public double Multiplicacao(params double[] nums)
+        public double Multiplicacao(List<double> nums)
         {
-            double total = 0;
+            double total = 1;
             foreach (double num in nums)
             {
-                total += num;
+                total *= num;
+                Console.WriteLine($"Valores durante execução: {total}");
             }
-            return 0;
+            return total;
         }
 
-        public double Divisao(params double[] nums)
+        public double Divisao(double total, List<double> nums)
         {
-            double total = 0;
             foreach (double num in nums)
             {
                 total += num;
