@@ -2,19 +2,43 @@
 {
     public class Calculadora
     {
-        // Soma(double n1, double n2)
-        public double Soma(double n1, double n2)
+        public double Soma(params double[] nums)
         {
-            return n1 + n2;
-        }
-        public double Soma(params double[] numeros)
-        {
-            double resultado = 0.0;
-            foreach (double numero in numeros)
+            double total = 0;
+            foreach (double num in nums)
             {
-                resultado += numero;
+                total += num;
             }
-            return resultado;
+            return total;
+        }
+
+        public double Subtracao(double total, params double[] nums)
+        {
+            foreach (double num in nums)
+            {
+                total -= num;
+            }
+            return total;
+        }
+
+        public double Multiplicacao(params double[] nums)
+        {
+            double total = 0;
+            foreach (double num in nums)
+            {
+                total += num;
+            }
+            return 0;
+        }
+
+        public double Divisao(params double[] nums)
+        {
+            double total = 0;
+            foreach (double num in nums)
+            {
+                total += num;
+            }
+            return 0;
         }
     }
 }
