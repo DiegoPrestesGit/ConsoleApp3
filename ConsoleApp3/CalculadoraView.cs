@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ConsoleApp3
 {
@@ -112,6 +113,36 @@ namespace ConsoleApp3
 
         public void MenuDivisao()
         {
+            Console.Clear();
+            Console.WriteLine("BEM VINDO AO MENU DE DIVISÃO!");
+            Console.WriteLine("Qual será o seu dividendo (número total a ser dividido)?");
+            int dividendo = int.Parse(Console.ReadLine());
+            if (dividendo == 0)
+            {
+                Console.WriteLine("Não é possível dividir por 0! PRESSIONE VOLTANDO A TELA PRINCIPAL");
+                Console.ReadLine();
+                return;
+            }
+            Console.WriteLine("Quantos divisores (número retirado do dividendo)?");
+            int qntNums = int.Parse(Console.ReadLine());
+            List<double> nums = new List<double>();
+            for (int i = 1; i <= qntNums; i++)
+            {
+                Console.WriteLine($"Digite o {i}º número usado para dividir:");
+                double num = double.Parse(Console.ReadLine());
+                if (num == 0)
+                {
+                    Console.WriteLine("Não é possível dividir por 0! PRESSIONE VOLTANDO A TELA PRINCIPAL");
+                    Console.ReadLine();
+                    return;
+                }
+                nums.Add(num);
+                Console.WriteLine();
+            }
+            double total = Calculadora.Divisao(dividendo, nums);
+            Console.WriteLine(total);
+            Console.WriteLine("Pressione enter para continuar...");
+            Console.ReadLine();
 
         }
     }

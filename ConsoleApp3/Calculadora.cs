@@ -42,9 +42,10 @@ namespace ConsoleApp3
         {
             foreach (double num in nums)
             {
-                total += num;
+                total /= num;
+                Console.WriteLine($"Valores durante execução: {total}");
             }
-            return 0;
+            return total;
         }
     }
 }
