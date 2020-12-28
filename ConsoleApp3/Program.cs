@@ -10,11 +10,12 @@ namespace ConsoleApp3
             Console.Read();
         }
 
-        public static void Execute()
-        {
-            CalculadoraView menuCalculadora = new CalculadoraView();
-            menuCalculadora.MainMenu();
-        }
+		public static void Execute()
+		{
+			//    CalculadoraView menuCalculadora = new CalculadoraView();
+			//    menuCalculadora.MainMenu();
+			//
+		}
     }
 
 }
