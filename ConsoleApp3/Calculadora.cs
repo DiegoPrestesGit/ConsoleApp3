@@ -1,20 +1,51 @@
-﻿namespace Projeto
+﻿using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp3
 {
     public class Calculadora
     {
-        // Soma(double n1, double n2)
-        public double Soma(double n1, double n2)
+        public double Soma(List<double> nums)
         {
-            return n1 + n2;
-        }
-        public double Soma(params double[] numeros)
-        {
-            double resultado = 0.0;
-            foreach (double numero in numeros)
+            double total = 0;
+            foreach (double num in nums)
             {
-                resultado += numero;
+                total += num;
+                Console.WriteLine($"Valores durante execução: {total}");
             }
-            return resultado;
+
+            return total;
+        }
+
+        public double Subtracao(double total, List<double> nums)
+        {
+            foreach (double num in nums)
+            {
+                total -= num;
+                Console.WriteLine($"Valores durante execução: {total}");
+            }
+            return total;
+        }
+
+        public double Multiplicacao(List<double> nums)
+        {
+            double total = 1;
+            foreach (double num in nums)
+            {
+                total *= num;
+                Console.WriteLine($"Valores durante execução: {total}");
+            }
+            return total;
+        }
+
+        public double Divisao(double total, List<double> nums)
+        {
+            foreach (double num in nums)
+            {
+                total /= num;
+                Console.WriteLine($"Valores durante execução: {total}");
+            }
+            return total;
         }
     }
 }
